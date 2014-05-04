@@ -1,12 +1,70 @@
 $blockquote: $type-border !default;
 $sans: "PT Sans", "Helvetica Neue", Arial, sans-serif !default;
-$serif: "PT Serif", Georgia, Times, "Times New Roman", serif !default;
-$mono: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace !default;
-$heading-font-family: "PT Serif", "Georgia", "Helvetica Neue", Arial, sans-serif !default;
-$header-title-font-family: $heading-font-family !default;
+$serif: gentium_book_basicregular, serif !default;
+$serif-bold: gentium_book_basicbold, serif !default;
+$serif-italic: gentium_book_basicitalic, serif !default;
+$mono: inconsolatamedium, monospace !default;
+$heading-font-family: gentium_book_basicregular, sans-serif !default;
+$header-title-font-family: gentium_book_basicbold !default;
 $header-subtitle-font-family: $heading-font-family !default;
 
 // Fonts
+
+@font-face {
+    font-family: 'gentium_book_basicregular';
+    src: font-url('genbkbasr-webfont.eot');
+    src: font-url('genbkbasr-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('genbkbasr-webfont.woff') format('woff'),
+         font-url('genbkbasr-webfont.ttf') format('truetype'),
+         font-url('genbkbasr-webfont.svg#gentium_book_basicregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'gentium_book_basicbold';
+    src: font-url('genbkbasb-webfont.eot');
+    src: font-url('genbkbasb-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('genbkbasb-webfont.woff') format('woff'),
+         font-url('genbkbasb-webfont.ttf') format('truetype'),
+         font-url('genbkbasb-webfont.svg#gentium_book_basicbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'gentium_book_basicbold_italic';
+    src: font-url('genbkbasbi-webfont.eot');
+    src: font-url('genbkbasbi-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('genbkbasbi-webfont.woff') format('woff'),
+         font-url('genbkbasbi-webfont.ttf') format('truetype'),
+         font-url('genbkbasbi-webfont.svg#gentium_book_basicbold_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'gentium_book_basicitalic';
+    src: font-url('genbkbasi-webfont.eot');
+    src: font-url('genbkbasi-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('genbkbasi-webfont.woff') format('woff'),
+         font-url('genbkbasi-webfont.ttf') format('truetype'),
+         font-url('genbkbasi-webfont.svg#gentium_book_basicitalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'inconsolatamedium';
+    src: font-url('inconsolata-webfont.eot');
+    src: font-url('inconsolata-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('inconsolata-webfont.woff') format('woff'),
+         font-url('inconsolata-webfont.ttf') format('truetype'),
+         font-url('inconsolata-webfont.svg#inconsolatamedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 .heading {
   font-family: $heading-font-family;
 }
@@ -36,16 +94,11 @@ h1 {
   line-height: 1.2em;
 }
 
-@media only screen and (min-width: 992px) {
-  body { font-size: 1.15em; }
-  h1 { font-size: 2.6em; line-height: 1.2em; }
-}
-
 #{headings()}{
   @extend .heading;
   text-rendering: optimizelegibility;
   margin-bottom: 1em;
-  font-weight: bold;
+  font-family: $serif-bold;
 }
 h2, section h1 {
   font-size: 1.5em;
@@ -76,9 +129,9 @@ ol { list-style-type: decimal;
 ul, ol { &, ul, ol { margin-left: 1.3em; }}
 ul, ol { ul, ol { margin-bottom: 0em; }}
 
-strong { font-weight: bold; }
+strong { font-family: $serif-bold; }
 
-em { font-style: italic; }
+em { font-family: $serif-italic; }
 
 sup, sub { font-size: 0.75em; position: relative;  display: inline-block; padding: 0 .2em; line-height: .8em;}
 sup { top: -.5em; }
@@ -86,14 +139,14 @@ sub { bottom: -.5em; }
 
 a[rev='footnote']{ font-size: .75em; padding: 0 .3em; line-height: 1; }
 
-q { font-style: italic;
+q { font-family: $serif-italic;
   &:before { content: "\201C"; }
   &:after { content: "\201D"; }
 }
 
-em, dfn { font-style: italic; }
+em, dfn { font-family: $serif-italic; }
 
-strong, dfn { font-weight: bold; }
+strong, dfn { font-family: $serif-bold; }
 
 del, s { text-decoration: line-through; }
 
@@ -109,14 +162,14 @@ big { font-size: 1.2em; }
 
 article blockquote {
   $bq-margin: 1.2em;
-  font-style: italic;
+  font-family: $serif-italic;
   position: relative;
   font-size: 1.2em;
   line-height: 1.5em;
   padding-left: 1em;
   border-left: 4px solid rgba($text-color-light, .5);
   cite {
-    font-style: italic;
+    font-family: $serif-italic;
     a { color: $text-color-light !important; word-wrap: break-word; }
     &:before { content: '\2014'; padding:{right: .3em; left: .3em;} color: $text-color-light; }
   }
@@ -144,6 +197,7 @@ article blockquote {
   position: relative;
   top: 7px;
   font-size: 1.4em;
+  font-family: $serif-bold;
   line-height: 1.45em;
 }
 
