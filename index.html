@@ -9,7 +9,7 @@
   <meta name="author" content="Didier Villevalois">
 
   
-  <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fermentum tellus ac enim vehicula facilisis id dapibus est. Proin lorem magna, &hellip;">
+  <meta name="description" content=" Blog Archives ">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -94,103 +94,6 @@
     <div id="content">
       <div class="blog-index">
   
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/05/04/some-latex-tests/">Some LaTeX Tests</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-05-04T02:54:16+02:00" pubdate data-updated="true">May 4<span>th</span>, 2014</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><span class="pullquote-right" data-pullquote="Lorem ipsum dolor sit amet">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fermentum tellus ac enim vehicula facilisis id dapibus est. <em>Proin lorem magna</em>, congue sit amet dignissim et, vulputate non nisi. Donec egestas a augue id viverra. <strong>Vivamus vulputate</strong> mauris lorem, quis egestas magna congue facilisis. Nullam gravida sapien in vehicula aliquet. Mauris fringilla egestas ante, eget dapibus est commodo sed. Nunc nisl turpis, faucibus id tempus vel, eleifend at ligula. Duis dictum dui non lectus viverra tempus. Nam pharetra sollicitudin quam, in iaculis purus tincidunt sed.
-</span></p>
-
-<p>Donec sit amet mauris pulvinar, eleifend diam nec, porta nunc. Curabitur fermentum, mauris et molestie feugiat, erat nunc tristique neque, vel pellentesque metus mi sed diam. Cras venenatis risus a posuere tincidunt. Maecenas sed iaculis erat. Curabitur posuere libero odio, vitae facilisis ipsum tincidunt ac. Vestibulum tempor dictum vestibulum. Suspendisse mollis ante magna, ut pulvinar ante laoreet eget.</p>
-
-<p>The syntax :</p>
-
-<script type="math/tex; mode=display">% <![CDATA[
-
-\begin{align*}
-t ::=& \; x_i                    & \text{variable} \\
-    |& \; t \; t                 & \text{application} \\
-    |& \; \lambda x_i \cdot t    & \text{abstraction} \\
-    |& \; \phi x_i \cdot t & \text{free variable} \\
-    |& \; \alpha x_i^j \cdot t   & \text{alpha conversion} \\
-    |& \; t [t/x_i^j]            & \text{closure} \\
-\end{align*}
- %]]></script>
-
-<p>Aliquam <code>|+|</code> tincidunt neque <a href="http://github.com/scalaz/scalaz">Scalaz</a> nec neque rutrum iaculis. Suspendisse nec rutrum dui. Curabitur pellentesque varius erat, sodales condimentum turpis faucibus et. Etiam faucibus dapibus orci, ut dictum risus elementum rhoncus. Ut ultricies pretium porttitor. Curabitur pretium pellentesque tortor, et venenatis nulla. Fusce nec diam ullamcorper, consectetur justo at, egestas est. Vivamus vel porta eros. Etiam imperdiet purus sit amet tempor pulvinar. Donec aliquam interdum lorem, eget dictum nisi condimentum at. Ut facilisis, elit a posuere congue, risus ipsum eleifend magna, eget dictum odio sem vel libero. Proin vitae viverra quam. Cras placerat mauris vehicula est condimentum elementum. In non vestibulum sem.</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-</pre></td><td class="code"><pre><code class="scala"><span class="line"><span class="k">def</span> <span class="n">product</span><span class="o">[</span><span class="kt">A:Monoid</span>,<span class="kt">B:Monoid</span><span class="o">]</span><span class="k">:</span> <span class="kt">Monoid</span><span class="o">[(</span><span class="kt">A</span>, <span class="kt">B</span><span class="o">)]</span> <span class="k">=</span>
-</span><span class="line">  <span class="k">new</span> <span class="nc">Monoid</span><span class="o">[(</span><span class="kt">A</span>, <span class="kt">B</span><span class="o">)]</span> <span class="o">{</span>
-</span><span class="line">    <span class="k">def</span> <span class="n">append</span><span class="o">(</span><span class="n">x</span><span class="k">:</span> <span class="o">(</span><span class="kt">A</span><span class="o">,</span> <span class="kt">B</span><span class="o">),</span> <span class="n">y</span><span class="k">:</span> <span class="o">=&gt;</span> <span class="o">(</span><span class="n">A</span><span class="o">,</span> <span class="n">B</span><span class="o">))</span> <span class="k">=</span>
-</span><span class="line">      <span class="o">(</span><span class="n">x</span><span class="o">.</span><span class="n">_1</span> <span class="o">|+|</span> <span class="n">y</span><span class="o">.</span><span class="n">_1</span><span class="o">,</span> <span class="n">x</span><span class="o">.</span><span class="n">_2</span> <span class="o">|+|</span> <span class="n">y</span><span class="o">.</span><span class="n">_2</span><span class="o">)</span>
-</span><span class="line">    <span class="k">val</span> <span class="n">zero</span> <span class="k">=</span> <span class="o">(</span><span class="n">mzero</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span> <span class="n">mzero</span><span class="o">[</span><span class="kt">B</span><span class="o">])</span>
-</span><span class="line">  <span class="o">}</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p><span class="pullquote-right" data-pullquote="Sed tristique orci at aliquet mattis.">
-Ut congue bibendum mauris a cursus. Duis et quam pulvinar, viverra ante vitae, bibendum mi. Integer nec sem quis turpis interdum bibendum. Phasellus placerat aliquet nibh. Aenean urna augue, tempor sed imperdiet a, porttitor ac velit. Sed sagittis cursus sapien non scelerisque. Praesent vitae leo eu risus euismod ullamcorper. Sed tristique orci at aliquet mattis. Sed auctor vitae risus in accumsan. Maecenas imperdiet nulla purus, at placerat massa mattis non. Donec eget erat purus. Aliquam eget nisi ut risus tristique cursus quis et urna. Pellentesque quis elementum leo. Donec quam lacus, semper sit amet neque vitae, consequat tempor lorem. Suspendisse at auctor purus.
-</span></p>
-
-<p>The reduction rules :</p>
-
-<script type="math/tex; mode=display">% <![CDATA[
-
-\begin{align*}
-&\mathbf{(Beta)} & ({\lambda} x_i \cdot a)b  & {\quad}{\longrightarrow}{\quad} a[b/x_i^0]\\
-\\
-&\mathbf{(ClosApp)} & (a\;b)[c/x_i^j]  & {\quad}{\longrightarrow}{\quad} a[c/x_i^j]\;b[c/x_i^j]\\
-&\mathbf{(ClosAbs)} & ({\lambda} x_{i+j+1} \cdot a)[b/x_i^j]  & {\quad}{\longrightarrow}{\quad} {\lambda} x_{i+j} \cdot(a[b/x_i^{j+1}])\\
-&\mathbf{(ClosVar_>)} & x_{k}[a/x_i^j]  & {\quad}{\longrightarrow}{\quad} x_{k-1} & \text{with}\;k > i\\
-&\mathbf{(ClosVar_<)} & x_{k}[a/x_i^j]  & {\quad}{\longrightarrow}{\quad} x_{k} & \text{with}\;k < i\\
-&\mathbf{(ClosVar_=)} & x_{k}[a/x_i^j]  & {\quad}{\longrightarrow}{\quad} {\alpha} x_i^j \cdot a & \text{with}\;k = i\\
-\\
-&\mathbf{(AlphaApp)} & \alpha x_i^j \cdot (a\;b)  & {\quad}{\longrightarrow}{\quad} (\alpha x_i^j \cdot a)\;(\alpha x_i^j \cdot b)\\
-&\mathbf{(AlphaAbs_\geq)} & \alpha x_i^j \cdot ({\lambda} x_{k} \cdot a)  & {\quad}{\longrightarrow}{\quad} {\lambda} x_{k+j} \cdot (\alpha x_i^j \cdot a) & \text{with}\;k \geq i\\
-&\mathbf{(AlphaAbs_<)}      & \alpha x_i^j \cdot ({\lambda} x_{k} \cdot a)  & {\quad}{\longrightarrow}{\quad} {\lambda} x_{k} \cdot (\alpha x_i^j \cdot a) & \text{with}\;k < i\\
-&\mathbf{(AlphaVar_\geq)} & \alpha x_i^j \cdot x_{k}  & {\quad}{\longrightarrow}{\quad} x_{k+j} & \text{with}\;k \geq i\\
-&\mathbf{(AlphaVar_<)} & \alpha x_i^j \cdot x_{k}  & {\quad}{\longrightarrow}{\quad} x_{k} & \text{with}\;k < i\\
-\end{align*}
- %]]></script>
-
-<p>Pellentesque purus nisi, porta vitae tempus et, volutpat nec diam. Integer sit amet scelerisque diam. Mauris blandit ligula in lorem sodales, et ornare nisi rhoncus. Etiam ut blandit nulla, non laoreet quam. Morbi aliquet dui odio, vitae gravida purus semper sit amet. Sed dapibus velit eget elit vehicula, non dictum arcu blandit. Maecenas lacinia ultrices lectus, eget ultricies ante scelerisque quis. Mauris sed libero posuere, facilisis mi vitae, consequat enim. Vestibulum tincidunt arcu eu dignissim pharetra. Duis quis placerat magna, id malesuada felis. Sed a odio mi. </p>
-</div>
-  
-  
-
-
-    </article>
   
   <div class="pagination">
     
